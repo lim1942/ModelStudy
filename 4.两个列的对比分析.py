@@ -16,7 +16,7 @@ df = df.dropna(axis=0,how="any")
 df = df[df["last_evaluation"]<=1][df["salary"]!="nme"][df["department"]!="sale"]
 
 # 分组分析
-# print(df.groupby("department").mean())
+print(df.groupby("department").mean())
 
 # 取两个列对比分析
 # print(df.loc[:,["last_evaluation","department"]].groupby("department").mean())
