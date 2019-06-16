@@ -4,7 +4,7 @@ import scipy.stats as ss
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# 相关分析
+# 连续值相关分析 使用相关系数
 # 相关性分析，找出对left影响最大的特征
 sns.set_context(font_scale=1.5)
 df = pd.read_csv("data/HR.csv.bak2")
@@ -14,8 +14,9 @@ plt.show()
 s1 = pd.Series(["X1","X1","X2","X2","X2","X2"])
 s2 = pd.Series(["Y1","Y1","Y1","Y2","Y2","Y2"])
 
-# ===========对于离散型变量=========
 
+
+# ===========对于离散型变量的相关性分析=========
 # 得到熵
 def getEntropy(s):
     if not isinstance(s,pd.core.series.Series):
