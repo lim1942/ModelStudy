@@ -22,7 +22,7 @@ def getEntropy(s):
     if not isinstance(s,pd.core.series.Series):
         s = pd.Series(s)
     # 得到分布
-    prt_ary = pd.groupby(s,by=s).count().values/float(len(s))
+    prt_ary = s.groupby(s).count().values/float(len(s))
     return -(np.log2(prt_ary)*prt_ary).sum()
 print("getEntropy:",getEntropy(s2))
 
@@ -59,7 +59,7 @@ def getprobSS(s):
     if not isinstance(s,pd.core.series.Series):
         s = pd.Series(s)
     # 得到分布
-    prt_ary = pd.groupby(s,by=s).count().values/float(len(s))
+    prt_ary = s.groupby(s).count().values/float(len(s))
     return  sum(prt_ary**2)
 def getGini(s1,s2):
     d = dict()
