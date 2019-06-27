@@ -45,7 +45,7 @@ def getEntropyGainRatio(s1,s2):
     return getEntropyGain(s1,s2)/getEntropy(s2)
 print("getEntropyGainRatio:",getEntropyGainRatio(s1,s2))
 
-# 衡量离散值的相关性
+# 相关性 ,离散值
 import math
 def getDiscreteCorr(s1,s2):
     return getEntropyGain(s1,s2)/math.sqrt(getEntropy(s1)*getEntropy(s2))
