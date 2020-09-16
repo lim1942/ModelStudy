@@ -18,10 +18,10 @@ print(np_s.median())
 print(np_s.max())
 print(np_s.min())
 # 正偏
-print(np_s.skew())
+print('skew:',np_s.skew())
 # 比正态分布缓和
-print(np_s.kurt())
-# 比例的分布
+print('kurt:',np_s.kurt())
+# 不同数值比例的分布
 print(np_s.value_counts(normalize=True).sort_index())
 
 
@@ -34,7 +34,7 @@ print(amh_s.skew())
 # 平缓，聚拢程度小
 print(amh_s.kurt())
 
-# 去除上下界之外的数据
+# 去除上下界之外的数据,根据四分拉锯，• Q1 – 1.5 * IQR ~ Q3 + 1.5 * IQR
 amh_s = amh_s[amh_s<amh_s.quantile(0.75)+1.5*(amh_s.quantile(0.75)-amh_s.quantile(0.25))][amh_s>amh_s.quantile(0.25)-1.5*(amh_s.quantile(0.75)-amh_s.quantile(0.25))]
 print(np.histogram(amh_s.values,bins=10))
 # 左闭右开

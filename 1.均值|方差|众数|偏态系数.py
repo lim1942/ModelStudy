@@ -13,22 +13,24 @@ print(df["satisfaction_level"].quantile(q=0.25))
 # 众数，返回一个series，因为可能有多个
 print(df["satisfaction_level"].mode())
 
-# 标注差
+# 标注差  衡量离散程度，和数据在同一个量纲
 print(df["satisfaction_level"].std())
-# 方差
+# 方差  衡量离散程度
 print(df["satisfaction_level"].var())
 # 求和
 print(df["satisfaction_level"].sum())
 
 
-# 偏态系数，负偏，大多人比较满意
+# 正态分布的对比量
+# 偏态系数，负偏，大多的数据大于平均值
+# 偏度的衡量是相对于正态分布来说，正态分布的偏度为0。因此我们说，若数据分布是对称的，偏度为0.若偏度>0,则可认为分布为右偏，即分布有一条长尾在右；若偏度<0，则可认为分布为左偏
 print(df["satisfaction_level"].skew())
-# 峰态系数
+# 峰态系数   峰度的取值范围为[1,+∞)，完全服从正态分布的数据的峰度值为 3，峰度值越大，概率分布图越高尖，峰度值越小，越矮胖。
 print(df["satisfaction_level"].kurt())
 
 
 
-# 标准正态分布对象
+# 标准正态分布对象(高斯分布)
 # 均值0，方差1，偏态系数0，偏态系数0
 print(ss.norm.stats(moments="mvsk"))
 # 分布函数，指定横坐标，返回纵坐标的值，参数是横坐标

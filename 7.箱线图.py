@@ -11,5 +11,6 @@ df = df.dropna(how="any",axis=0)
 df = df[df["last_evaluation"]<=1][df["salary"]!="nme"][df["department"]!="sale"]
 
 # 设置为横向的箱线图，saturation设置四位数边界时，whis为k值
+# 上边缘，上四分位数，中位数，下四分位数，下边缘
 sns.boxplot(x=df["time_spend_company"],saturation=0.75,whis=3)
 plt.show()

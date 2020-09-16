@@ -16,8 +16,12 @@ print(df[df["satisfaction_level"].isnull()])
 # 删除有空的数据
 print(sl_s.dropna())
 # 填充有空的数据
-sl_s.fillna()
+sl_s.fillna(0)
 # 通过四分位数得到上下界，分析连续异常值
+# 第一四分位数 (Q1)，又称“较小四分位数”，等于该样本中所有数值由小到大排列后第25%的数字。
+# 第二四分位数 (Q2)，又称“中位数”，等于该样本中所有数值由小到大排列后第50%的数字。
+# 第三四分位数 (Q3)，又称“较大四分位数”，等于该样本中所有数值由小到大排列后第75%的数字。
+# 第三四分位数与第一四分位数的差距又称四分位距（InterQuartile Range,IQR）。
 print(sl_s.dropna().quantile(0.25))
 print(sl_s.dropna().quantile(0.75))
 # 负偏，大多的数据大于平均值

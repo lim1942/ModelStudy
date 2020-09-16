@@ -20,5 +20,6 @@ print(df.groupby("department").mean())
 
 # 取两个列对比分析
 # print(df.loc[:,["last_evaluation","department"]].groupby("department").mean())
-print(df.loc[:,["average_monthly_hours","department"]].groupby("department")["average_monthly_hours"].apply(lambda x:x.max()-x.min()))
+print(df.loc[:,["average_monthly_hours","department"]].groupby("department").apply(lambda x:x.max()-x.min()))
+# print(df.loc[:,["average_monthly_hours","department"]].groupby("department")["average_monthly_hours"].apply(lambda x:x.max()-x.min()))
 
